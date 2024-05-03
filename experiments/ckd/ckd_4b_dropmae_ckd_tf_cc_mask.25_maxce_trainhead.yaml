@@ -1,0 +1,91 @@
+DATA:
+  MAX_SAMPLE_INTERVAL: 200
+  MEAN:
+  - 0.485
+  - 0.456
+  - 0.406
+  SEARCH:
+    CENTER_JITTER: 3
+    FACTOR: 4.0
+    SCALE_JITTER: 0.25
+    SIZE: 256
+    NUMBER: 1
+  STD:
+  - 0.229
+  - 0.224
+  - 0.225
+  TEMPLATE:
+    CENTER_JITTER: 0
+    FACTOR: 2.0
+    SCALE_JITTER: 0
+    SIZE: 128
+
+  TRAIN:
+    DATASETS_NAME:
+    - LasHeR_trainingSet
+    DATASETS_RATIO:
+    - 1
+    SAMPLE_PER_EPOCH: 30000
+  VAL:
+    DATASETS_NAME:
+    - LasHeR_testingSet
+    DATASETS_RATIO:
+    - 1
+    SAMPLE_PER_EPOCH: 10000
+MODEL:
+  PRETRAIN_FILE: "./output/checkpoints/train/ckd/ckd_4b_dropmae_ckd_tf_cc_mask.25_bugFix/OSTrack_CKD_ep0025.pth.tar"
+  RGB_BRANCH: "./pretrained/DropTrack_k700_800E_alldata.pth.tar"
+  TIR_BRANCH: "./pretrained/DropTrack_k700_800E_alldata.pth.tar"
+  RGB_TEACHER: "./pretrained/DropTrack_k700_800E_alldata.pth.tar"
+  TIR_TEACHER: "./pretrained/DropTrack_k700_800E_alldata.pth.tar"
+  TRAIN_RGB_BRANCH: True
+  TRAIN_TIR_BRANCH: True
+  TRAIN_RGB_TEACHER: True
+  TRAIN_TIR_TEACHER: True
+  EXTRA_MERGER: False
+  RETURN_INTER: False
+  BACKBONE:
+    TYPE: vit_base_patch16_224_ce
+    STRIDE: 16
+    CE_LOC: [3, 6, 9]
+    CE_KEEP_RATIO: [0.7, 0.7, 0.7]
+    CE_TEMPLATE_RANGE: 'CTR_POINT'  # choose between ALL, CTR_POINT, CTR_REC, GT_BOX
+  HEAD:
+    TYPE: CENTER
+    NUM_CHANNELS: 256
+TRAIN:
+  CKD_LOSS: CKD
+  MASK_PROBABILITY: 0.
+  INPUT_MASK_RATIO: 0.
+  PARAM_KEY:   # set your learning rate and parameter you want to train.
+  - [head,        0.00005]        # just finetune the head
+  BACKBONE_MULTIPLIER: 0.1
+  DROP_PATH_RATE: 0.1
+  CE_START_EPOCH: 0
+  CE_WARM_EPOCH: 0
+  BATCH_SIZE: 64
+  EPOCH: 10
+  GIOU_WEIGHT: 2.0
+  L1_WEIGHT: 5.0
+  STYLE_DISTILL_WEIGHT: 0.01
+  CONTENT_DISTILL_WEIGHT: 0.1
+  STOP_CONTENT_GRADIENT: True
+  STOP_STYLE_GRADIENT: False
+  STYLE_LOSS_TYPE: "channel"    # choose between `channel`, `token`
+  CONTENT_LOSS_TYPE: "channel"
+  GRAD_CLIP_NORM: 0.1
+  LR: 0.00005
+  NUM_WORKER: 6
+  OPTIMIZER: ADAMW
+  PRINT_INTERVAL: 50
+  SCHEDULER:
+    TYPE: NULL
+  VAL_EPOCH_INTERVAL: 1
+  WEIGHT_DECAY: 0.0001
+  AMP: False
+TEST:
+  EPOCH: 10
+  SEARCH_FACTOR: 4.0
+  SEARCH_SIZE: 256
+  TEMPLATE_FACTOR: 2.0
+  TEMPLATE_SIZE: 128
