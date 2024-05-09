@@ -2,8 +2,10 @@
 TODO: 填入结果文件的路径信息，评估跟踪器
 """
 
+from rgbt.utils import RGBT_start
 import rgbt     # pip install rgbt==1.0.1   github: https://github.com/opacity-black/RGBT_toolkit
 from seqList import *
+RGBT_start()
 gtot = rgbt.GTOT()
 
 
