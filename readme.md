@@ -25,5 +25,5 @@ In the inference process, we only need two student branch and their tracking hea
 Model    | link         | PR/SR     | MACs(G)| FPS
 ---------|--------------|-----------|--------|-----
 CKD w/o CE      | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 72.3/57.4 | 57.802 | 84.8
-w/ CE DropMAE | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.0/58.0 | 42.735 | 96.4
-w/ MCE DropMAE  | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.2/58.1 | 42.735 | 96.4
+CKD w/ CE DropMAE | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.0/58.0 | 42.735 | 96.4
+CKD w/ MCE DropMAE  | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.2/58.1 | 42.735 | 96.4
