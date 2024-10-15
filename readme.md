@@ -1,6 +1,5 @@
 ## Coupled Knowledge Distillation (CKD)
-Coupled Knowledge Distillation CKD is a simple and effective training framework that pursues common styles of different modalities to break modality gap for high performance RGBT tracking.  
-Importantly, CKD does not introduce additional computational cost in the inference process.
+Coupled Knowledge Distillation CKD is a simple and effective training framework that pursues common styles of different modalities to break modality gap for high performance RGBT tracking. Importantly, CKD does not introduce additional computational cost in the inference process.
 
 # Train
 
