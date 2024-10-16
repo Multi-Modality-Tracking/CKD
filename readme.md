@@ -25,3 +25,19 @@ Model    | Checkpoint and Raw result   | PR/SR     | MACs(G)| FPS |
 CKD w/o CE      | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 72.3/57.4 | 57.802 | 84.8
 CKD w/ CE DropMAE | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.0/58.0 | 42.735 | 96.4
 CKD w/ MCE DropMAE  | [download](https://pan.baidu.com/s/1WkD8Vm310_0Ey9UABaXSNQ?pwd=nq1k) | 73.2/58.1 | 42.735 | 96.4
+
+### Citation
+
+Please kindly cite this paper in your publications if it helps your research:
+```
+@inproceedings{
+lu2024breaking,
+title={Breaking Modality Gap in {RGBT} Tracking: Coupled Knowledge Distillation},
+author={Andong Lu and Jiacong Zhao and Chenglong Li and Yun Xiao and Bin Luo},
+booktitle={ACM Multimedia 2024},
+year={2024},
+url={https://openreview.net/forum?id=2jzyYyRqX0}
+}
+```
+
+Contact: adlu_ah@foxmail.com
